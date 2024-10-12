@@ -103,7 +103,7 @@ def main():
 	parser = argparse.ArgumentParser(description='convert sets of 4 pages into 1 page')
 	parser.add_argument('-v', '--verbose', action='store_true', help='Enable verbose output')
 	parser.add_argument('-m', '--manga', action='store_true', help='Enable manga mode (pages are tiled right to left)')
-	parser.add_argument('in', dest='input', type=str, help='Input directory')
+	parser.add_argument('inp', type=str, help='Input directory')
 	parser.add_argument('out', type=str, help='Output directory for grouped pages')
 	args = parser.parse_args()
 
@@ -111,7 +111,7 @@ def main():
 		global logger
 		logger = lambda *args, **kwargs: None
 
-	pagegroup(args.input, args.out, args.manga)
+	pagegroup(args.inp, args.out, args.manga)
 
 if __name__ == '__main__':
 	main()
